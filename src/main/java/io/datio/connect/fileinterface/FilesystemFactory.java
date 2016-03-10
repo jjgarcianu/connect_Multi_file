@@ -5,7 +5,7 @@ import java.io.InputStream;
 public  class FilesystemFactory {
 
 
-    public static InputStream getFile(String filename, FilesystemType zos)
+    public static InputStream getFile(String filename, FilesystemType type)
             throws FileDoesNotExistException{
 
         return null;
