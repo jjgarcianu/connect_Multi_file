@@ -17,7 +17,7 @@
 
 package io.datio.connect.monofile;
 
-import io.datio.connect.fileinterface.FileDoesNotExistException;
+;
 import io.datio.connect.fileinterface.FilesystemFactory;
 import io.datio.connect.fileinterface.FilesystemType;
 import org.apache.kafka.connect.data.Schema;
@@ -102,7 +102,7 @@ public class FileStreamSourceTask extends SourceTask {
                 }
                 reader = new BufferedReader(new InputStreamReader(stream));
                 log.debug("Opened {} for reading", logFilename());
-            } catch (FileDoesNotExistException e) {
+            } catch (IOException e) {
                 log.warn("Couldn't find file for FileStreamSourceTask, sleeping to wait for it to be created");
                 synchronized (this) {
                     this.wait(1000);
