@@ -18,7 +18,7 @@
 package io.datio.connect.monofile;
 
 import io.datio.connect.fileinterface.FileDoesNotExistException;
-import io.datio.connect.fileinterface.FileInterface;
+import io.datio.connect.fileinterface.FilesystemFactory;
 import io.datio.connect.fileinterface.FilesystemType;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.errors.ConnectException;
@@ -76,7 +76,7 @@ public class FileStreamSourceTask extends SourceTask {
     public List<SourceRecord> poll() throws InterruptedException {
         if (stream == null) {
             try {
-                stream = new FileInterface(filename, FilesystemType.ZOS);
+                stream =   FilesystemFactory.getFile(filename, FilesystemType.ZOS);
                 Map<String, Object> offset = context.offsetStorageReader().offset(Collections.singletonMap(FILENAME_FIELD, filename));
                 if (offset != null) {
                     Object lastRecordedOffset = offset.get(POSITION_FIELD);
