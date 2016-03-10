@@ -17,6 +17,8 @@
 
 package io.datio.connect.monofile;
 
+import io.datio.connect.fileinterface.FileDoesNotExistException;
+import io.datio.connect.fileinterface.FileInterface;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.errors.ConnectException;
 import org.apache.kafka.connect.source.SourceRecord;
@@ -24,7 +26,12 @@ import org.apache.kafka.connect.source.SourceTask;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+
+//(import java.io.*;
+import java.io.InputStreamReader;
 import java.util.*;
 
 /**
@@ -68,7 +75,7 @@ public class FileStreamSourceTask extends SourceTask {
     public List<SourceRecord> poll() throws InterruptedException {
         if (stream == null) {
             try {
-                stream = new FileInputStream(filename);
+                stream = new FileInterface(filename);
                 Map<String, Object> offset = context.offsetStorageReader().offset(Collections.singletonMap(FILENAME_FIELD, filename));
                 if (offset != null) {
                     Object lastRecordedOffset = offset.get(POSITION_FIELD);
@@ -94,7 +101,7 @@ public class FileStreamSourceTask extends SourceTask {
                 }
                 reader = new BufferedReader(new InputStreamReader(stream));
                 log.debug("Opened {} for reading", logFilename());
-            } catch (FileNotFoundException e) {
+            } catch (FileDoesNotExistException e) {
                 log.warn("Couldn't find file for FileStreamSourceTask, sleeping to wait for it to be created");
                 synchronized (this) {
                     this.wait(1000);
