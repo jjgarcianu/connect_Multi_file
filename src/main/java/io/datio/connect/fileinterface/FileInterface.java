@@ -3,11 +3,15 @@ package io.datio.connect.fileinterface;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Created by jjgarcia on 10/03/16.
- */
-public class FileInterface extends InputStream {
-    public FileInterface(String filename) throws FileDoesNotExistException{
+public  class FileInterface extends InputStream {
+
+    private FilesystemType filesysType  = null;
+    private String filenameRegEx  = null;
+
+    public FileInterface(String pFilenameRegEx, FilesystemType pFilesysType ) throws FileDoesNotExistException{
+
+        filenameRegEx = pFilenameRegEx;
+        filesysType = pFilesysType;
     }
 
     @Override
