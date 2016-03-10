@@ -14,7 +14,7 @@
  * limitations under the License.
  **/
 
-package io.datio.connect.file.util;
+package io.datio.connect.multifile.util;
 
 /**
  * General string utilities that are missing from the standard library and may commonly be

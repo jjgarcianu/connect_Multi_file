@@ -14,7 +14,7 @@
  * limitations under the License.
  **/
 
-package io.datio.connect.file.util;
+package io.datio.connect.multifile.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

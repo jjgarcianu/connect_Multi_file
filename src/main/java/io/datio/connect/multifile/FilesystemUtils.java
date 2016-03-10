@@ -14,9 +14,9 @@
  * limitations under the License.
  **/
 
-package io.datio.connect.file;
+package io.datio.connect.multifile;
 
-import io.datio.connect.file.filesys.*;
+import io.datio.connect.multifile.metadatafilestore.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.text.SimpleDateFormat;

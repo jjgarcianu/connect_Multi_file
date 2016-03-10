@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  **/
-package io.datio.connect.file;
+package io.datio.connect.multifile;
 
 public class FilesystemSourceConnectorConstants {
   public static final String TABLE_NAME_KEY = "table";

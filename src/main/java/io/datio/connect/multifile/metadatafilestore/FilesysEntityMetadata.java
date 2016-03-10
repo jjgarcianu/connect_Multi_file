@@ -1,4 +1,4 @@
-package io.datio.connect.file.filesys;
+package io.datio.connect.multifile.metadatafilestore;
 
 //import java.sql.FilesysException;
 //import java.sql.Types;

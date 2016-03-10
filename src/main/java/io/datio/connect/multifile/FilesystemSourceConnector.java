@@ -14,11 +14,11 @@
  * limitations under the License.
  **/
 
-package io.datio.connect.file;
+package io.datio.connect.multifile;
 
-import io.datio.connect.file.filesys.FilesysAdaptor;
-import io.datio.connect.file.filesys.FilesysException;
-import io.datio.connect.file.util.StringUtils;
+import io.datio.connect.multifile.metadatafilestore.FilesysAdaptor;
+import io.datio.connect.multifile.metadatafilestore.FilesysException;
+import io.datio.connect.multifile.util.StringUtils;
 import org.apache.kafka.connect.connector.Task;
 import org.apache.kafka.connect.errors.ConnectException;
 import org.apache.kafka.connect.source.SourceConnector;
@@ -34,7 +34,7 @@ import java.util.Map;
 import java.util.Set;
 
 import io.confluent.common.config.ConfigException;
-import io.datio.connect.file.util.Version;
+import io.datio.connect.multifile.util.Version;
 
 /**
  * JdbcConnector is a Kafka Connect Connector implementation that watches a JDBC database and

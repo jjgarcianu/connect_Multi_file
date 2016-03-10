@@ -14,10 +14,10 @@
  * limitations under the License.
  **/
 
-package io.datio.connect.file;
+package io.datio.connect.multifile;
 
-import io.datio.connect.file.filesys.FilesysAdaptor;
-import io.datio.connect.file.filesys.FilesysException;
+import io.datio.connect.multifile.metadatafilestore.FilesysAdaptor;
+import io.datio.connect.multifile.metadatafilestore.FilesysException;
 import org.apache.kafka.connect.errors.ConnectException;
 import org.apache.kafka.connect.source.SourceRecord;
 import org.apache.kafka.connect.source.SourceTask;
@@ -33,7 +33,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import io.confluent.common.config.ConfigException;
 import io.confluent.common.utils.SystemTime;
 import io.confluent.common.utils.Time;
-import io.datio.connect.file.util.Version;
+import io.datio.connect.multifile.util.Version;
 
 /**
  * JdbcSourceTask is a Kafka Connect SourceTask implementation that reads from JDBC databases and

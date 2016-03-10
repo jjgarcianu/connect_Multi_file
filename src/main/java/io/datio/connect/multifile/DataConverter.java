@@ -14,15 +14,15 @@
  * limitations under the License.
  **/
 
-package io.datio.connect.file;
+package io.datio.connect.multifile;
 
-import io.datio.connect.file.filesys.FileRegexResultset;
-import io.datio.connect.file.filesys.FilesysEntityMetadata;
-import io.datio.connect.file.filesys.FilesysException;
+import io.datio.connect.multifile.metadatafilestore.FileRegexResultset;
+import io.datio.connect.multifile.metadatafilestore.FilesysEntityMetadata;
+import io.datio.connect.multifile.metadatafilestore.FilesysException;
 import org.apache.kafka.connect.data.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import io.datio.connect.file.filesys.Types;
+import io.datio.connect.multifile.metadatafilestore.Types;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Calendar;

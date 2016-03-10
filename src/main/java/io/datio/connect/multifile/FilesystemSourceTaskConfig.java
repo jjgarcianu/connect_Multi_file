@@ -14,7 +14,7 @@
  * limitations under the License.
  **/
 
-package io.datio.connect.file;
+package io.datio.connect.multifile;
 
 import java.util.Map;
 

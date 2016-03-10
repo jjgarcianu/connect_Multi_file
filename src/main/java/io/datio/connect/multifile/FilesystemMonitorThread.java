@@ -14,10 +14,10 @@
  * limitations under the License.
  **/
 
-package io.datio.connect.file;
+package io.datio.connect.multifile;
 
-import io.datio.connect.file.filesys.FilesysAdaptor;
-import io.datio.connect.file.filesys.FilesysException;
+import io.datio.connect.multifile.metadatafilestore.FilesysAdaptor;
+import io.datio.connect.multifile.metadatafilestore.FilesysException;
 import org.apache.kafka.connect.connector.ConnectorContext;
 import org.apache.kafka.connect.errors.ConnectException;
 import org.slf4j.Logger;
